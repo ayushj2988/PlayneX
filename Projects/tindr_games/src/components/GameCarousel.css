@@ -1,0 +1,27 @@
+.game-carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.carousel-item {
+  transform-style: preserve-3d;
+}
+
+.carousel-item.side {
+  cursor: pointer;
+  transition: filter var(--transition-fast);
+}
+
+.carousel-item.side:hover {
+  filter: brightness(1.2);
+}
+
+/* Ensure the side cards don't have interactive cursors inside them */
+.carousel-item.side * {
+  pointer-events: none;
+}

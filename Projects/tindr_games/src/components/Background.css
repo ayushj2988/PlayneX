@@ -1,0 +1,93 @@
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: var(--bg-dark);
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 20%;
+  opacity: 0.95;
+  filter: blur(15px);
+  transform: scale(1.15); /* Keep edges hidden from blur */
+  animation: slowZoom 30s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(to bottom, rgba(7, 7, 9, 0) 0%, rgba(7, 7, 9, 0.4) 60%, rgba(7, 7, 9, 0.9) 100%),
+    linear-gradient(to right, rgba(7, 7, 9, 0.6) 0%, rgba(7, 7, 9, 0) 25%, rgba(7, 7, 9, 0) 75%, rgba(7, 7, 9, 0.6) 100%),
+    radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.5) 150%);
+  z-index: 2;
+}
+
+.background-title-wrapper {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.background-text {
+  font-family: var(--font-display);
+  font-size: 15vw;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+  pointer-events: none;
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+}
+
+.background-text.outline {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.05);
+}
+
+.background-tint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  mix-blend-mode: color;
+}
+
+.background-grain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Simplified from SVG noise for performance */
+  pointer-events: none;
+}

@@ -1,0 +1,33 @@
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: var(--canvas);
+}
+
+.scene__image {
+  position: absolute;
+  inset: -5%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(60px) saturate(1.1) brightness(0.5);
+  transform: scale(1.1);
+  transition: opacity 0.6s ease;
+}
+
+.scene__tint {
+  position: absolute;
+  inset: 0;
+  background: var(--accent, transparent);
+  mix-blend-mode: color;
+  opacity: 0.3;
+}
+
+.scene__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 50% 12%, transparent 0%, rgba(18, 15, 13, 0.5) 55%, var(--canvas) 100%),
+    linear-gradient(180deg, rgba(18, 15, 13, 0.15) 0%, var(--canvas) 92%);
+}

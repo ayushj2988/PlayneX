@@ -1,0 +1,84 @@
+.swipe-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  z-index: 100;
+}
+
+.control-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 100px;
+  background: rgba(20, 20, 25, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.control-btn:hover {
+  background: rgba(30, 30, 38, 0.6);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.control-btn:active {
+  transform: translateY(0px);
+}
+
+.control-icon {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-btn {
+  background: rgba(20, 20, 25, 0.6);
+  border-color: var(--game-accent);
+  color: var(--game-accent);
+  padding: 1rem 2.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.wishlist-btn .control-icon {
+  font-size: 1.3rem;
+  margin-right: 0.2rem;
+}
+
+.wishlist-btn:hover {
+  background: rgba(243, 112, 33, 0.1); /* fallback, will use var ideally */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(243, 112, 33, 0.2);
+}
+
+@media (max-width: 768px) {
+  .swipe-controls {
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .control-btn {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .control-label {
+    display: none; /* Hide labels on mobile to save space, rely on icons */
+  }
+
+  .wishlist-btn .control-label {
+    display: block; /* Keep wishlist label */
+  }
+}
